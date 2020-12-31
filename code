@@ -1,0 +1,59 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class interview {
+
+	//"max" variable declared and initialized
+		String max = "";
+
+
+		 public static void main(String[] args) {
+			    
+			 	//Scanner method used for input purposes
+			 	Scanner sc=new Scanner(System.in);
+			 	
+			 	//Helps user to understand which information is needed to be input
+			    System.out.println("Below, please enter the sentence of your choice: ");
+			    
+			      //Creating new "sentence" variable for input
+			      String sentence = sc.nextLine();     
+			      
+			      //Object is created to call the method
+			      interview  maximum = new interview();
+			      
+			      //New variable "b" created and the result of calling "longest" method with the use of input "sentence" is assigned to it
+			      String b = maximum.longest(sentence);
+			      
+			    //Prints the length of the "b" variable
+					System.out.print(b.length()+ " ");
+					
+			      //Prints the result in quotes as required
+				  System.out.println("\"" + b + "\"");  
+				  
+				
+			  }
+			  	//new String method created with 1 parameter
+				public String  longest(String a) {
+					
+					//New array created and parameter "a" split by whitespace
+					String [] arr = a.split(" ");
+					
+					//Loop will be checking as many times as array length
+					for (int i=0; i<arr.length; i++) {
+						
+						//Checking if array's element is longer than the "max" variable
+						if(max.length()<arr[i].length()) {
+							//If arrays element is longer than the "max" variable, then this element is assigned to "max" variable 
+							 max = arr[i];
+						}
+						 
+					}
+					
+					//Returns the "max" value itself
+					return max;
+					
+		
+				}
+			  
+			  
+			}
