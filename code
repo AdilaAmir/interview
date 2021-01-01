@@ -3,9 +3,6 @@ import java.util.Scanner;
 
 public class interview {
 
-	//"max" variable declared and initialized
-		String max = "";
-
 
 		 public static void main(String[] args) {
 			    
@@ -34,7 +31,9 @@ public class interview {
 			  }
 			  	//new String method created with 1 parameter
 				public String  longest(String a) {
-					
+					//"max" variable declared and initialized
+		                           String max = "";
+
 					//New array created and parameter "a" split by whitespace
 					String [] arr = a.split(" ");
 					
