@@ -1,0 +1,54 @@
+import static org.junit.Assert.*;
+import static org.junit.Assume.assumeTrue;
+
+import org.junit.Test;
+
+public class interviewTest {
+
+	@Test
+	//this method checks if the longest expression in sentence (divided by whitespace (" ")) matches the expectations
+	public void testlongest() {
+		
+		interview obj = new interview();
+		String expected = "State";
+		String actual = obj.longest("New York State");
+		assertTrue(expected.equals(actual));
+	}
+	@Test	
+	//this method process the empty sentence and checks if the result matches the expectation which is the Empty("")
+		public void testEmpty() {
+		interview obj = new interview();
+		String expected = "";
+		String actual = obj.longest(" ");
+		assertTrue(expected.equals(actual));
+	}
+	
+	@Test	
+	//this method process the sentence which contains only 1 word and checks if the result matches the expectation which is that word only
+	public void testOneWord() {
+	interview obj = new interview();
+	String expected = "word";
+	String actual = obj.longest("word");
+	assertTrue(expected.equals(actual));
+	}
+	
+	@Test	
+	//this method process the sentence which has 2 or more words with the longest length and checks the expectation which is the first match
+	public void test2SameLength() {
+	interview obj = new interview();
+	String expected = "York";
+	String actual = obj.longest("New York Best ");
+	assertTrue(expected.equals(actual));
+	}
+	
+	@Test	
+	//this method process the sentence which has all words with the same length and checks the expectation which is the first match
+	public void testAllSameLength() {
+	interview obj = new interview();
+	String expected = "New";
+	String actual = obj.longest("New car and new oil ");
+	assertTrue(expected.equals(actual));
+	}
+	
+
+}
